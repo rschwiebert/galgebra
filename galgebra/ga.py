@@ -164,7 +164,7 @@ class Ga(metric.Metric):
     @staticmethod
     def build(*kargs, **kwargs):
         """
-        Static method to instanciate geometric algebra and return geometric
+        Static method to instantiate geometric algebra and return geometric
         algebra, basis vectors, and grad operator as a tuple.
         """
         GA = Ga(*kargs, **kwargs)
@@ -199,7 +199,7 @@ class Ga(metric.Metric):
 
     def __init__(self, bases, **kwargs):
 
-        # Each time a geometric algebra is intialized in setup of append
+        # Each time a geometric algebra is initialized in setup of append
         # the printer must be restored to the simple text mode (not
         # enhanced text of latex printing) so that when 'str' is used to
         # create symbol names the names are not mangled.
@@ -240,7 +240,7 @@ class Ga(metric.Metric):
         self.lt_flg = False
         self.i = mv.Mv(self.iobj, ga=self)
 
-        if Ga.restore:  # restore printer to appropriate enhanced mode after ga is instanciated
+        if Ga.restore:  # restore printer to appropriate enhanced mode after ga is instantiated
             printer.GaLatexPrinter.redirect()
 
         if self.coords is not None:
@@ -251,7 +251,7 @@ class Ga(metric.Metric):
 
         self.a = []  # List of dummy vectors for Mlt calculations
         self.agrads = {}  # Gradient operator with respect to vector a
-        self.dslot = -1  # kargs slot for dervative, -1 for coordinates
+        self.dslot = -1  # kargs slot for derivative, -1 for coordinates
 
     def make_grad(self, a, cmpflg=False):  # make gradient operator with respect to vector a
 
@@ -294,7 +294,7 @@ class Ga(metric.Metric):
 
     def mv(self, root=None, *kargs, **kwargs):
         """
-        Instanciate and return a multivector for this, 'self',
+        Instantiate and return a multivector for this, 'self',
         geometric algebra.
         """
         (self.mv_I, self.mv_basis, self.mv_x) = mv.Mv.setup(ga=self)
@@ -350,7 +350,7 @@ class Ga(metric.Metric):
 
     def dop(self, *kargs, **kwargs):
         """
-        Instanciate and return a multivector differential operator for
+        Instantiate and return a multivector differential operator for
         this, 'self', geometric algebra.
         """
         kwargs['ga'] = self
@@ -358,7 +358,7 @@ class Ga(metric.Metric):
 
     def lt(self, *kargs, **kwargs):
         """
-        Instanciate and return a linear transformation for this, 'self',
+        Instantiate and return a linear transformation for this, 'self',
         geometric algebra.
         """
         if not self.lt_flg:
@@ -370,8 +370,8 @@ class Ga(metric.Metric):
 
     def sm(self, *kargs, **kwargs):
         """
-        Instanciate and return a submanifold for this, 'self',
-        geometric algebra.  See 'Sm' class for instanciation inputs.
+        Instantiate and return a submanifold for this, 'self',
+        geometric algebra.  See 'Sm' class for instantiation inputs.
         """
         kwargs['ga'] = self
         SM = Sm(*kargs, **kwargs)
@@ -415,7 +415,7 @@ class Ga(metric.Metric):
                     e_{i_{1}}^e_{i_{2}}^...^e_{i_{r}}.
 
         These are called the blade basis for the geometric algebra and
-        and multivector can also be represented by a linears combination
+        and multivector can also be represented by a linear combination
         of these blades and the scalars.  The number of basis vectors
         that are in the symbol for the blade is call the grade of the
         blade.
@@ -543,9 +543,9 @@ class Ga(metric.Metric):
         orthogonal bases all basis product lists are generated on the
         fly using functions and the base and blade representations
         are identical.  For a non-orthogonal basis the multiplication
-        table for the geometric product is pre-calcuated for base pairs.
+        table for the geometric product is pre-calculated for base pairs.
         The tables for all other products (including the geometric
-        product) are calulated on the fly and updated and are for blade
+        product) are calculated on the fly and updated and are for blade
         pairs.
 
         All tables are of the form
@@ -644,7 +644,7 @@ class Ga(metric.Metric):
         blst_expand = [blst]
         blst_coef = [1]
         blst_flg = [False]
-        # reduce untill all blst revise flgs are True
+        # reduce until all blst revise flgs are True
         while not reduce(operator.and_, blst_flg):
             for i in range(len(blst_flg)):
                 if not blst_flg[i]:  # keep revising if revise flg is False
@@ -681,7 +681,7 @@ class Ga(metric.Metric):
         """
         blst is a list of integers [i_{1},...,i_{r}] representing the geometric
         product of r basis vectors a_{{i_1}}*...*a_{{i_r}}.  reduce_basis_loop
-        searches along the list [i_{1},...,i_{r}] untill it finds i_{j} == i_{j+1}
+        searches along the list [i_{1},...,i_{r}] until it finds i_{j} == i_{j+1}
         and in this case contracts the list, or if i_{j} > i_{j+1} it revises
         the list (~i_{j} means remove i_{j} from the list)
 
@@ -908,7 +908,7 @@ class Ga(metric.Metric):
                 Aexpand = blade_expansion[blade_index.index(index[1:])]
                 # Formula for outer (^) product of a vector and grade-r multivector
                 # a^A_{r} = (a*A + (-1)^{r}*A*a)/2
-                # The folowing evaluation takes the most time for setup it is the due to
+                # The following evaluation takes the most time for setup it is the due to
                 # the substitution required for the multiplications
                 a_W_A = half * (self.basic_mul(a, Aexpand) - ((-1) ** grade) * self.basic_mul(Aexpand, a))
                 blade_index.append(index)
@@ -1316,7 +1316,7 @@ class Ga(metric.Metric):
         Calculate derivatives of basis blade 'blade' using derivative of
         basis vectors calculated by metric. 'ib' is the index of the
         coordinate the derivation is with respect to or the coordinate
-        symbol.  These are requried for the calculation of the geometric
+        symbol.  These are required for the calculation of the geometric
         derivatives in curvilinear coordinates or for more general
         manifolds.
 
@@ -1360,7 +1360,7 @@ class Ga(metric.Metric):
         if isinstance(coord, list):
             # Perform multiple partial differentiation where coord is
             # a list of differentiation orders for each coordinate and
-            # the coordinate is determinded by the list index.  If the
+            # the coordinate is determined by the list index.  If the
             # element in the list is zero no differentiation is to be
             # performed for that coordinate index.
 
@@ -1551,7 +1551,7 @@ class Sm(Ga):
                example '[u,v]'.
 
     See 'init_slots' for possible other inputs.  The 'Ga' member function
-    'sm' can be used to instanciate the submanifold via (o3d is the base
+    'sm' can be used to instantiate the submanifold via (o3d is the base
     manifold)
 
         coords = (u,v) = symbols(',v',real=True)
@@ -1574,7 +1574,7 @@ class Sm(Ga):
 
         kwargs = metric.test_init_slots(Sm.init_slots, **kwargs)
         u = kargs[0]  # Coordinate map or vector embedding to define submanifold
-        coords = kargs[1]  # List of cordinates
+        coords = kargs[1]  # List of coordinates
         ga = kwargs['ga']  # base geometric algebra
         if ga is None:
             raise ValueError('Base geometric algebra must be specified for submanifold.')

@@ -38,7 +38,7 @@ class Mv(object):
     Wrapper class for multivector objects (self.obj) so that it is easy
     to overload operators (*,^,|,<,>) for the various multivector
     products and for printing.  Also provides an __init__ fuction to
-    easily instanciate multivector objects.  Additionally, the functionality
+    easily instantiate multivector objects.  Additionally, the functionality
     of the multivector derivative have been added via the special vector
     'grad' so that one can take the geometric derivative of a multivector
     function 'A' by applying 'grad' from the left, 'grad*A', or the
@@ -65,7 +65,7 @@ class Mv(object):
     @staticmethod
     def setup(ga):
         """
-        Set up constant mutilvectors reqired for multivector class for
+        Set up constant mutilvectors required for multivector class for
         a given geometric algebra, 'ga'.
         """
         Mv.fmt = 1
@@ -105,7 +105,7 @@ class Mv(object):
             print 'A > B =', A, B
             return A > B
         else:
-            raise ValeError('Operation ' + op + 'not allowed in Mv.Mul!')
+            raise ValueError('Operation ' + op + 'not allowed in Mv.Mul!')
         return
 
     def characterise_Mv(self):
@@ -243,7 +243,7 @@ class Mv(object):
     def __init__(self, *kargs, **kwargs):
 
         if 'ga' not in kwargs:
-            raise ValueError("Geometric algebra key inplut 'ga' required")
+            raise ValueError("Geometric algebra key input 'ga' required")
 
         kwargs = metric.test_init_slots(Mv.init_slots, **kwargs)
 
@@ -744,7 +744,7 @@ class Mv(object):
 
     def collect(self,deep=False):
         """
-        # group coeffients of blades of multivector
+        # group coefficients of blades of multivector
         # so there is only one coefficient per grade
         self.obj = expand(self.obj)
         if self.is_blade_rep or Mv.Ga.is_ortho:
@@ -917,7 +917,7 @@ class Mv(object):
         Returns various derivatives (*,^,|,<,>) of multivector functions
         with respect to arbitrary coordinates, 'coords'.  This would be
         used where you have a multivector function of both the basis
-        coordinate set and and auxilliary coordinate set.  Consider for
+        coordinate set and and auxiliary coordinate set.  Consider for
         example a linear transformation in which the matrix coefficients
         depend upon the manifold coordinates, but the vector being
         transformed does not and you wish to take the divergence of the
@@ -1259,7 +1259,7 @@ class Sdop(object):
         else:
             if len(kargs) == 2:
                 if len(kargs[0]) != len(kargs[1]):
-                    raise ValueError('In Sdop.__init__ coefficent list and Pdop list must be same length.')
+                    raise ValueError('In Sdop.__init__ coefficient list and Pdop list must be same length.')
                 self.terms = zip(kargs[0],kargs[1])
             elif len(kargs) == 1:
                 self.terms = kargs[0]

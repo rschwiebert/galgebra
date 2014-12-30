@@ -2,8 +2,8 @@ To program using galgebra sympy must be installed -
 
 github.com/sympy/sympy
 
-If you wish to put the modules in galgebra in the python path open a terminal
-in the galgebra subdirectory and run
+If you wish to put the modules in galgebra in the python path, open a terminal
+in the galgebra subdirectory and run.
 
 sudo python setgapth.py
 
@@ -13,14 +13,14 @@ python setgapth.py
 
 for windows.
 
-To use the LaTeX printing options in galgebra a LaTeX distibution is required 
+To use the LaTeX printing options in galgebra, a LaTeX distribution is required
 containing pdflatex (texlive for linux, miktex for windows).
 
-To use the enhances printing options in windows ansicon must be installed -
+To use the enhanced printing options in windows ansicon must be installed -
 
 github.com/adoxa/ansicon
 
-It is strongly reccomended that the geany editor/development environment be installed -
+It is strongly recommended that the geany editor/development environment be installed -
 
 www.geany.org
 

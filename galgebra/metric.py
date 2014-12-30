@@ -156,10 +156,10 @@ def test_init_slots(init_slots, **kwargs):
     """
     Tests kwargs for allowed keyword arguments as defined by dictionary
     init_slots.  If keyword argument defined by init_slots is not present
-    set default value asdefined by init_slots.  Allow for backward
+    set default value as defined by init_slots.  Allow for backward
     compatible keyword arguments by equivalencing keywords by setting
     default value of backward compatible keyword to new keyword and then
-    referencing new keywork (see init_slots for Metric class and equivalence
+    referencing new keyword (see init_slots for Metric class and equivalence
     between keywords 'g' and 'metric')
     """
 
@@ -235,14 +235,14 @@ class Metric(object):
         Returns the dot product of two vectors in an orthogonal coordinate
         system.  V1 and V2 are lists of sympy expressions.  g is
         a list of constants that gives the signature of the vector space to
-        allow for non-euclidian vector spaces.
+        allow for non-Euclidean vector spaces.
 
         This function is only used to form the dot product of vectors in the
         embedding space of a vector manifold or in the case where the basis
         vectors are explicitly defined by vector fields in the embedding
         space.
 
-        A g of None is for a Euclidian embedding space.
+        A g of None is for a Euclidean embedding space.
         """
         if g is None:
             dot = 0
@@ -263,7 +263,7 @@ class Metric(object):
         """
         rows of metric tensor are separated by "," and elements
         of each row separated by " ".  If the input is a single
-        row it is assummed that the metric tensor is diagonal.
+        row it is assumed that the metric tensor is diagonal.
 
         Output is a square matrix.
         """

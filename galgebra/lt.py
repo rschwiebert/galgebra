@@ -346,7 +346,7 @@ class Mlt(object):
           (F*G)(v_1,...,v_r,...,v_(r+s)) = F(v_1,...,v_r)*G(v_(r+1),...,v_(r+s)),
     where * is any of the multivector multiplicative operations.
     The derivative of a mlt with is defined as the directional derivative with respect
-    with respect to the coordinate vector (we assume F is implicitely a function of the
+    with respect to the coordinate vector (we assume F is implicitly a function of the
     coordinates)
         F(v_1,...,v_r;v_(r+1)) = (v_(r+1)|grad)F(v_1,...,v_j,...,v_r).
     The contraction of a mlt between slots j and k is defined as the
@@ -535,7 +535,7 @@ class Mlt(object):
                 Ga.make_grad(self.args)
                 self.fvalue = (f | self.args[0]).obj
                 self.f = None
-            else: #  To be inplemented for f a general pure grade mulitvector
+            else: #  To be implemented for f a general pure grade mulitvector
                 self.nargs = nargs
                 self.fvalue = f
                 self.f = None

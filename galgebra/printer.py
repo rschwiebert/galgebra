@@ -361,7 +361,7 @@ class GaLatexPrinter(LatexPrinter):
 
         Format(Fmode=True,Dmode=True,ipy=False)
 
-    where Fmode is the function printing mode that surpresses printing arguments,
+    where Fmode is the function printing mode that suppresses printing arguments,
     Dmode is the derivative printing mode that does not use fractions, and
     ipy=True is the Ipython notebook mode that does not redirect the print output.
 
@@ -374,7 +374,7 @@ class GaLatexPrinter(LatexPrinter):
     immediately.
 
     There are three options for printing multivectors in latex.  They are
-    acessed with the multivector member function -
+    accessed with the multivector member function -
 
         A.Fmt(self,fmt=1,title=None)
 
@@ -400,7 +400,7 @@ class GaLatexPrinter(LatexPrinter):
 
         print title,A
 
-    everthing in the title processing still applies except that the multivector
+    everything in the title processing still applies except that the multivector
     formatting is one multivector per line.
 
     For print statements of the form -
@@ -916,7 +916,7 @@ def Format(Fmode=True, Dmode=True, dop=1):
 
         Fmode:  Suppress function arguments (True)          Use sympy latex for functions (False)
         Dmode:  Use compact form of derivatives (True)      Use sympy latex for derivatives (False)
-        ipy:    Do not redirect ouput for ipython (True)    Redirect output for latex post processing (False)
+        ipy:    Do not redirect output for ipython (True)    Redirect output for latex post processing (False)
 
     and redirects printer output so that latex compiler can capture it.
     """
